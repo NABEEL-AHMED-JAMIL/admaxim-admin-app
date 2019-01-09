@@ -1,0 +1,10 @@
+
+    <div class="drag-box" cdkDrag>
+        Drag me!
+        </div>
+
+       <div class="outer" cdkDrag>
+        <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" >
+            <div class="example-box" *ngFor="let oneTile of tiles" cdkDrag><h2>{{oneTile}}</h2></div>
+          </div>
+          </div>

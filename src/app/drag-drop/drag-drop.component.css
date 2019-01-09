@@ -1,0 +1,48 @@
+.drag-box{
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgb(211, 213, 214);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    display: flex;
+    transform: scale(1.2);
+}
+
+
+.example-list {
+    width: 50px;
+    
+    border: solid 2px #ccc;
+    min-height: 40px;
+    display: block;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    
+  }
+  
+  .example-box {
+
+    border-bottom: solid 2px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  
+
+  .outer{
+
+    border: 2px solid black;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  
+    display: flex;
+    width: 60px;
+
+  }

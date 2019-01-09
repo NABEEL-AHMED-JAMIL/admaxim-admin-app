@@ -1,0 +1,121 @@
+<!-- mat card start -->
+<!-- ///////////////// -->
+<div class="example-container-left">
+<mat-card class="matcardContainer">
+    <mat-card-header class="mat-card-headerr1">
+      <div mat-card-avatar class="example-header-image"><img src="assets/logo2.png" class="logo"></div>
+      <button mat-mini-fab color="primary" class="header-Plus-icon" (click)="addItem()">
+          <mat-icon>add</mat-icon>
+        </button>
+      <mat-card-title>Admaxim</mat-card-title>
+      <mat-card-subtitle>Admaxim pvt ltd.</mat-card-subtitle>
+    </mat-card-header>
+      <mat-card-content class="card-content">
+      
+          
+
+
+              <div class="example-list" cdkDropList #firstList="cdkDropList" [cdkDropListData]="first" [cdkDropListConnectedTo]="[secondList]" 
+                (cdkDropListDropped)="drop($event)">
+            
+               <div class="left-pannel-div">
+                <div class="example-box-left" *ngFor="let item of first" cdkDrag>{{item}}
+                  
+                </div></div>
+              </div>
+            
+      
+    </mat-card-content>
+    
+  </mat-card>
+
+</div>
+
+
+<!-- mat-card end -->
+<!-- ////////////////////////////////// -->
+
+
+<div class="example-container">
+<div class="right-Pannel-Div">
+
+  <div cdkDropList #secondList="cdkDropList" [cdkDropListData]="second" [cdkDropListConnectedTo]="[firstList]" class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of second">
+        <mat-expansion-panel class="fixExpansionBody">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                  {{item}}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{second.indexOf(item)}}
+                Type your name and age
+              </mat-panel-description>
+               <button class="panel-icon" value={{second.indexOf(item)}} (click)=delete($event)>X</button>
+            </mat-expansion-panel-header>
+<!-- ///////////////////////////////////////// -->
+<!-- [style.display]="isCheck ? 'none' : 'block'" -->
+
+
+    <form *ngIf="!submitted" [formGroup]="adminForm">
+      <mat-card class="example-card">
+        <mat-card-header class="mat-card-headerr">
+          <div mat-card-avatar class="example-header-image"><img src="assets/logo2.png" class="logo"></div>
+          <mat-card-title>Admaxim</mat-card-title>
+          <mat-card-subtitle>Admaxim</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            <mat-form-field appearance="outline" class="idField">
+              <mat-label>Source ID</mat-label>
+              <input matInput placeholder="Enter Source ID" matInput type="number" name="sourceID" formControlName="sourceID">
+              
+            </mat-form-field>
+          </p>
+
+          <mat-form-field class="RoleOption">
+            <select matNativeControl placeholder="Select Id" name="id" formControlName="selectID">
+              <option value="" selected></option>
+              <option *ngFor="let ID of iDs" [value]="ID.value">
+                {{ID.viewValue}}
+              </option>
+            </select>
+          </mat-form-field>
+          <mat-form-field class="textAreaField">
+            <textarea matInput placeholder="1sdf,sdfsd,2sdfsdf,sdfsdfs5" formControlName="note" class="textArea"></textarea>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions class="action">
+          <button mat-raised-button color="basic" class="reset" (click)="onReset()">Clear</button>
+          <button mat-raised-button color="basic" class="submit" type="submit" (click)="onSubmit()" [disabled]=!adminForm.valid>Verify
+            and Submit</button>
+
+        </mat-card-actions>
+      </mat-card>
+    </form>
+ 
+
+
+
+
+
+
+
+
+
+<!-- ///////////////////////////// -->
+
+            </mat-expansion-panel>
+   
+      
+    </div>
+
+    <!-- ///////////////// -->
+
+ 
+
+
+    <!-- //////////////////////////// -->
+  </div>
+
+ </div></div>

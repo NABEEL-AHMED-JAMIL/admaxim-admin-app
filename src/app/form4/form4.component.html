@@ -1,0 +1,46 @@
+
+<form *ngIf="!submitted" [formGroup]="adminForm">
+<mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"><img src="assets/logo2.png" class="logo"></div>
+                <mat-card-title>Admaxim</mat-card-title>
+                <mat-card-subtitle>Admaxim</mat-card-subtitle>
+              </mat-card-header>
+   
+         
+         <mat-card-content>
+                 <p>     
+                    <mat-form-field appearance="outline" class="idField">
+                          <mat-label>Source ID</mat-label>
+                          <input matInput placeholder="Enter Source ID"  matInput type="number" name="sourceID" formControlName="sourceID">
+                          <!-- <div *ngIf="sourceID.">error please</div> -->
+                          <span *ngIf="setError">There is error</span>
+                    </mat-form-field>
+                  </p>
+
+                      <mat-form-field class="RoleOption">
+                          <select matNativeControl placeholder="Select Id" name="id" formControlName="selectID">
+                              <option value="" selected></option>
+                              <option *ngFor="let ID of iDs" [value]="ID.value">
+                              {{ID.viewValue}}
+                              </option>
+                           </select>
+                        </mat-form-field>
+                  
+
+                           <mat-form-field class="textAreaField">
+                             
+                              <textarea matInput placeholder="1sdf,sdfsd,2sdfsdf,sdfsdfs5"  formControlName="note" class="textArea" ></textarea>
+                         
+                            </mat-form-field>
+
+           </mat-card-content>
+               <mat-card-actions class="action">
+                      <button mat-raised-button color="basic" class="reset" (click)="onReset()">Clear</button>
+                      <button mat-raised-button color="basic" class="submit" type="submit" (click)="onSubmit()" [disabled]=!adminForm.valid>Verify and Submit</button>
+                    
+                 </mat-card-actions>
+</mat-card>
+
+</form>
+

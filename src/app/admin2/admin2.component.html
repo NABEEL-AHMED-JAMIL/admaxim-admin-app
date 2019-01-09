@@ -1,0 +1,73 @@
+ 
+ 
+<form [formGroup]="mform"> 
+       <div class="headerDiv">
+                      <div class="emailContainer">
+                          <mat-form-field appearance="outline" class="emailField">
+                              <mat-label>email</mat-label>
+                              <input matInput placeholder="email" formControlName="email" >
+                              <mat-icon matSuffix>email</mat-icon>
+                          </mat-form-field>
+                    </div>
+                      
+                    <table class="tble">
+                        <tr>
+                            <td><mat-icon matSuffix
+                                class="indicator" [ngStyle]="{'color':!mform.valid ? 'red': 'green',
+                                 'text-shadow':!mform.valid ? '0px 0px 0px red': '2px 2px 5px #155211'}">fiber_manual_record
+                               </mat-icon>
+                               </td>
+                            <td> <button mat-mini-fab color="basic" class="circleBtn1" (click)=ShowEmail() [disabled]=!mform.valid>
+                                <mat-icon aria-label="Example icon-button with a heart icon">done</mat-icon>
+                              </button></td>
+                            <td> <button mat-mini-fab color="basic" class="circleBtn2">
+                                <mat-icon aria-label="Example icon-button with a heart icon" (click)=mReset()>close</mat-icon>
+                              </button></td>
+                            <td> 
+                                <button mat-raised-button class="btnAdd">New-User</button> </td>
+                        </tr>
+                       
+                      </table>
+                      
+                  
+      </div>
+
+ </form>
+
+
+
+
+
+
+
+<!-- 
+ <div class="mygridMain">
+    <div class="mygrid1" ><mat-icon matSuffix
+       class="indicator" [ngStyle]="{'color':!mform.valid ? 'red': 'green'}">fiber_manual_record
+      </mat-icon>
+
+    </div>
+<div class="mygrid2">
+  
+        <mat-icon matSuffix class="circleBtn1" (click)="ShowEmail()">check_circle_outline</mat-icon> -->
+        <!-- <mat-icon matSuffix class="circleBtn2">highlight_off</mat-icon> -->
+        <!-- <button mat-mini-fab color="basic" class="circleBtn1" (click)=ShowEmail() [disabled]=!mform.valid>
+            <mat-icon aria-label="Example icon-button with a heart icon">done</mat-icon>
+          </button>
+         
+
+</div>
+      <div class="mygrid3">
+          <span>
+              <button mat-mini-fab color="basic" class="circleBtn2">
+                  <mat-icon aria-label="Example icon-button with a heart icon" (click)=mReset()>close</mat-icon>
+                </button></span>
+        
+      </div>
+      
+      <div class="mygrid4">
+          
+         <button mat-raised-button class="btnAdd">New-User</button> 
+      </div> 
+
+</div> --> 

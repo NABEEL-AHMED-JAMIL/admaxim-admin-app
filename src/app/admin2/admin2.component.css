@@ -1,0 +1,108 @@
+.headerDiv{
+width: 80%;
+height: 62px;
+border: 5px solid black;
+margin: auto;
+
+
+
+}
+
+.emailField{
+
+    width:100%;
+    font-size: 12px;
+    /* border: 2px solid black; */
+    padding: 0%;
+    outline: 2px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    
+   
+}
+.emailContainer{
+    position: absolute;
+    width: 35%;
+}
+
+
+   
+.indicator{
+     
+    color: red;
+    font-size: 30px;
+    margin-top: 6px;
+    /* text-shadow: 2px 2px 4px red; */
+ 
+}
+/* 
+.mygridMain {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-right: 0%;
+    margin: 0%;
+    float: right;
+    margin-right: 34%;
+   
+  }
+  .mygrid1 {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    margin-right: 0%;
+  }
+  .mygrid2 {
+    background-color: rgba(255, 255, 255, 0.8);
+   
+    margin-top: 6px;
+    
+  
+   
+  }
+  .mygrid3 {
+    background-color: rgba(255, 255, 255, 0.8);
+    float: right;
+    margin-left: 40%;
+    
+    
+  }
+
+  .mygrid4 {
+    background-color: rgba(255, 255, 255, 0.8);
+  
+    
+  } */
+
+  .btnAdd{
+    
+    margin-top: 10px;
+    border: 2px solid black;
+     margin-left: 340%;
+  }
+
+
+  .circleBtn1{
+     border:2px solid black;
+     margin-left: 10px; 
+     margin-top: 6px;
+  }
+
+  
+  .circleBtn2{
+    font-size: 50px;
+    margin-left: 2px;
+    border:2px solid black;
+    margin-top: 8px;
+    
+   
+  }
+
+
+  .tble{
+
+     margin-left: 47%;
+  
+
+  }
+
+  

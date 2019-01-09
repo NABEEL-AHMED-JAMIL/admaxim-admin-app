@@ -1,0 +1,183 @@
+    .headerDiv{
+    width: 75%;
+    height: 80px;
+    background-color: #337ab7;
+    margin: auto;
+    }
+
+  
+    .leftDiv{
+    position: absolute;
+    width: 30%;
+    height: 560px;
+    margin-left: 12.4%;
+    border-left:  1px solid #337ab7; 
+    border-bottom: 1px solid #337ab7;
+   
+    
+    }
+
+  
+    .delete {
+  
+    /* visibility: hidden; */
+    float: right;
+    background-color:#337ab7;
+    color: white;
+    
+    }
+
+
+     .rightDiv{
+     width: 45.5%;;
+     margin-right: 12.5%;
+     height: 560px;
+     float: right;
+     border-right:  1px solid #337ab7; 
+     border-bottom: 1px solid #337ab7;
+     }
+
+  
+     .dateField{
+     position: absolute;
+     margin-left: 20px;
+      }
+
+  
+     .dateField2{
+     margin-left: 55%;
+      }
+  
+
+     .label1{
+     margin-left: 20px;
+      }
+
+  
+     .label2{
+     margin-left: 40%;
+      }
+
+
+     .label3{
+     color: red;
+     margin-left: 20%;
+      }
+
+
+     .logo{
+     margin-left: 16px;
+     margin-top: 10px;
+       }
+
+
+     .RoleOption{
+     width:90%;
+     margin-left: 20px;
+     margin-top: 8px;
+       }
+  
+
+     .email{
+     margin-left: 20px;
+     width: 60%;
+     font-size: 12px;
+       }
+
+  
+     .note{
+     margin-bottom: 0%;
+     margin-left: 20px;
+       }
+  
+
+     .textArea{
+     width: 90%;
+     margin-left: 20px;
+     margin-top: 0%;
+      }
+
+
+     .btnDiv{
+     width: 90%;
+     margin-left: 20px;
+      }
+  
+
+     .primary{
+     float: right;
+      }
+
+  
+     .items {
+     margin: 0 0 2em 0;
+     list-style-type: none;
+     padding: 0;
+     width: 90%;
+      }
+
+
+
+     li {
+     position: relative;
+     cursor: pointer;
+     /* background-color: #EEE; */
+     /* margin: .5em; */
+     /* border-radius: 4px; */
+     padding: .3em 0;
+     border: 0.2px solid #337ab7;
+     height: 1.6em;
+     overflow: auto;
+     overflow-y: hidden;
+     width: 100%; 
+         }
+  
+
+     li:hover {
+     color: rgb(172, 176, 179);
+     background-color: rgb(255, 255, 255);
+     left: .1em;
+       }
+     .search{
+     width: 90%;
+     padding-bottom: 0%;
+       }
+  
+     .mdate{
+     position: absolute;
+     text-overflow: auto;
+    overflow-x: hidden;
+    margin-right: 0%;
+         }
+  
+     .mmail{
+     margin-left: 130px; 
+     
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        margin-right: 0%;
+        margin: 0%;
+      
+      }
+      .grid-item1 {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: left;
+        margin-right: 0%;
+      }
+      .grid-item2 {
+        background-color: rgba(255, 255, 255, 0.8);
+       overflow: auto;
+       overflow-y: hidden;
+       text-align: justify;
+       text-justify: auto;
+       
+       
+      }
+      .grid-item3 {
+        background-color: rgba(255, 255, 255, 0.8);
+        
+      }
+  
