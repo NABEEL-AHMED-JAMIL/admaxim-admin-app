@@ -1,0 +1,15 @@
+.mat-elevation-z24{
+width: 80%;
+margin: auto;
+height: 500px;
+overflow: auto;
+}
+.tble{
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 25%;  
+  }
+

@@ -35,7 +35,15 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { DynamicFormComponent } from '../app/dynamic-form/dynamic-form.component';
 import { QuestionDynamicComponent } from './dynamic-form/question-dynamic.component';
 import { ChildDynamicComponent } from './dynamic-form/child-dynamic.component';
+import { TablePracticeComponent } from './table-practice/table-practice.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import { APiComponent } from './api/api.component';
 
+import {   fakeBackendProvider } from '../app/admin/fake-back-end';
+import { HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
+import { JwtInterceptor} from '../app/admin/JwtInterceptor';
 const appRoutes: Routes = [
   {path: '',redirectTo:'/form4',pathMatch:'full' },
   { path: 'login', component: LoginComponent },
@@ -45,6 +53,8 @@ const appRoutes: Routes = [
   { path: 'dragdrop', component:  DragDropComponent},
   { path: 'draglist', component:  DragListComponent},
   {path: 'Dynamic',component:DynamicFormComponent},
+  {path:'table',component:TablePracticeComponent},
+  {path:'api',component:APiComponent},
   {path: "**",component:PageNotFoundComponent}
 ];
 
@@ -63,6 +73,8 @@ const appRoutes: Routes = [
     DynamicFormComponent,
     QuestionDynamicComponent,
     ChildDynamicComponent,
+    TablePracticeComponent,
+    APiComponent,
   
   ],
   imports: [
@@ -87,7 +99,11 @@ const appRoutes: Routes = [
     LayoutModule,
     MatListModule,
     DragDropModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    HttpClientModule
    
   ],
   
@@ -97,7 +113,16 @@ const appRoutes: Routes = [
      MatCheckboxModule,
      MatDatepickerModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    
+
+    // provider used to create fake backend
+    fakeBackendProvider
+
+
+  ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
