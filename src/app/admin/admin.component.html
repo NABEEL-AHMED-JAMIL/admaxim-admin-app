@@ -1,107 +1,100 @@
+<!-- header Div -->
 
-      <!-- header Div -->
-
-   <div class="headerDiv">
-     <img src="assets/logo2.png" class="logo">
-  </div>
-
+<div class="headerDiv">
+  <img src="assets/logo2.png" class="logo">
+</div>
 
 
-     <!-- left div -->
-     <div class="leftDiv">
 
-               <mat-form-field class="search">
-               <input #searchbox  id="search-box" matInput placeholder="Search" [(ngModel)]="searchTerm">
-               </mat-form-field>
-           <ul class="items">
-               <li *ngFor="let item of items |  myitemFilter:searchTerm">
-                   
-                 <div class="grid-container">
-                  <div class="grid-item1">
-                    <span class=mdate>{{item.mdate}}</span></div>
-                  <div class="grid-item2"><span class="mmail"> {{item.email}}</span></div>
-                  <div class="grid-item3"> <button class="delete" value={{items.indexOf(item)}} title="delete hero" (click)=delete($event) >x</button>
-                  </div>  
-                  
-                </div>
-                
-                
-                
-                
-                  
-              </li>
-        </ul>
-    </div>
+<!-- left div -->
+<div class="leftDiv">
+
+  <mat-form-field class="search">
+    <input #searchbox id="search-box" matInput placeholder="Search" [(ngModel)]="searchTerm">
+  </mat-form-field>
+  <ul class="items">
+    <li *ngFor="let item of Loadusers |  myitemFilter:searchTerm">
+
+      <div class="grid-container">
+        <div class="grid-item1">
+          <span class=mdate>{{item.mdate}}</span></div>
+        <div class="grid-item2"><span class="mmail"> {{item.email}}</span></div>
+        <div class="grid-item3"> <button class="delete" value={{items.indexOf(item)}} title="delete hero" (click)=  deleteUser(item.id)>x</button>
+        </div>
+      
+      </div>
+
+    </li>
+  </ul>
+</div>
 
 <form *ngIf="!submitted" [formGroup]="mform">
 
-     <div class="rightDiv">
+  <div class="rightDiv">
 
-            <!-- Role option Menu  -->
-             <mat-form-field class="RoleOption">
-               <select matNativeControl placeholder="Select Role" name="role" formControlName="SelectRole">
-                 <option value="" selected></option>
-                  <option *ngFor="let Role of roles" [value]="Role.value">
-                  {{Role.viewValue}}
-                 </option>
-               </select>
-             </mat-form-field>
-            <br>
-     
-             <div class="dateDiv">
+    <!-- Role option Menu  -->
+    <mat-form-field class="RoleOption">
+      <select matNativeControl placeholder="Select Role" name="role" formControlName="SelectRole">
+        <option value="" selected></option>
+        <option *ngFor="let Role of roles" [value]="Role.value">
+          {{Role.viewValue}}
+        </option>
+      </select>
+    </mat-form-field>
+    <br>
 
-                   <!-- labels  -->
-                   <span class="label1">Start Date:</span>
-                   <span class="label2">End Date:</span>
-                   <br> 
+    <div class="dateDiv">
 
-                    <!-- start Date  -->
-                  <mat-form-field class="dateField">
-                       <input matInput formControlName="Startdate" [matDatepicker]="picker"  placeholder="Choose a date">
-                       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                       <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
-                   </mat-form-field> 
-       
-                    <!-- End Date   -->
-                   <mat-form-field class="dateField2">
-                     <input matInput  formControlName="mdate" [matDatepicker]="pickerto" placeholder="Choose a date">
-                     <mat-datepicker-toggle matSuffix [for]="pickerto"></mat-datepicker-toggle>
-                     <mat-datepicker #pickerto startView="year" [startAt]="EndDate"></mat-datepicker>
-                   </mat-form-field> 
-                     <div class="label3 ngIf=mflag==true"></div><span class="label3">{{error}}</span>
-       
-            </div>
-    
-      
-                   <span class="label1"><b>Email:</b></span>
-    
-                  <!-- email field  -->
-                 <p>
-                   <mat-form-field appearance="outline" class="email">
-                   <mat-label>Outline form field</mat-label>
-                   <input matInput formControlName="email" placeholder="Placeholder" type="email" id="email">
-                   <mat-icon matSuffix>email</mat-icon>
-                   <mat-hint>Hint</mat-hint>
-                   </mat-form-field>
-                 </p>
+      <!-- labels  -->
+      <span class="label1">Start Date:</span>
+      <span class="label2">End Date:</span>
+      <br>
 
-                <p class="note" ><b>Note:</b></p>
-                <mat-form-field  class="textArea">
-                <textarea matInput formControlName="Note" placeholder="Your note" ></textarea>
-                </mat-form-field>
+      <!-- start Date  -->
+      <mat-form-field class="dateField">
+        <input matInput formControlName="Startdate" [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+      </mat-form-field>
+
+      <!-- End Date   -->
+      <mat-form-field class="dateField2">
+        <input matInput formControlName="mdate" [matDatepicker]="pickerto" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="pickerto"></mat-datepicker-toggle>
+        <mat-datepicker #pickerto startView="year" [startAt]="EndDate"></mat-datepicker>
+      </mat-form-field>
+      <div class="label3 ngIf=mflag==true"></div><span class="label3">{{error}}</span>
+
+    </div>
 
 
-               <!-- Buttons  -->
+    <span class="label1"><b>Email:</b></span>
 
-                 <div class="btnDiv">
-                     <button mat-raised-button (click)="onReset()">Reset</button>
-                     <button mat-raised-button color="primary" class="primary" type="submit" (click)="onSubmit()" [disabled]="!mform.valid">Submit</button>
-                 </div>
+    <!-- email field  -->
+    <p>
+      <mat-form-field appearance="outline" class="email">
+        <mat-label>Outline form field</mat-label>
+        <input matInput formControlName="email" placeholder="Placeholder" type="email" id="email">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+
+    <p class="note"><b>Note:</b></p>
+    <mat-form-field class="textArea">
+      <textarea matInput formControlName="Note" placeholder="Your note"></textarea>
+    </mat-form-field>
 
 
-    
-     </div>
-  
-     
+    <!-- Buttons  -->
+
+    <div class="btnDiv">
+      <button mat-raised-button (click)="onReset()">Reset</button>
+      <button mat-raised-button color="primary" class="primary" type="submit" (click)="onSubmit()" [disabled]="!mform.valid">Submit</button>
+
+    </div>
+
+  </div>
+
+
 </form>
-      
